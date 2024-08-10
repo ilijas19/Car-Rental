@@ -1,0 +1,370 @@
+[
+  {
+    "id": 1,
+    "make": "Tesla",
+    "model": "Model S",
+    "year": 2020,
+    "image": "img/cars/car1.jpg",
+    "price_per_day": 150,
+    "featuredCar": 1
+  },
+  {
+    "id": 2,
+    "make": "Ford",
+    "model": "Mustang",
+    "year": 2019,
+    "image": "img/cars/car2.jpg",
+    "price_per_day": 120,
+    "featuredCar": 1
+  },
+  {
+    "id": 3,
+    "make": "Chevrolet",
+    "model": "Camaro",
+    "year": 2018,
+    "image": "img/cars/car3.jpg",
+    "price_per_day": 110,
+    "featuredCar": 1
+  },
+  {
+    "id": 4,
+    "make": "BMW",
+    "model": "M3",
+    "year": 2021,
+    "image": "img/cars/car4.jpg",
+    "price_per_day": 160,
+    "featuredCar": 1
+  },
+  {
+    "id": 5,
+    "make": "Audi",
+    "model": "A4",
+    "year": 2020,
+    "image": "img/cars/car5.jpg",
+    "price_per_day": 130
+  },
+  {
+    "id": 6,
+    "make": "Mercedes-Benz",
+    "model": "C-Class",
+    "year": 2019,
+    "image": "img/cars/car6.jpg",
+    "price_per_day": 140
+  },
+  {
+    "id": 7,
+    "make": "Toyota",
+    "model": "Camry",
+    "year": 2021,
+    "image": "img/cars/car7.jpg",
+    "price_per_day": 100
+  },
+  {
+    "id": 8,
+    "make": "Honda",
+    "model": "Civic",
+    "year": 2020,
+    "image": "img/cars/car8.jpg",
+    "price_per_day": 90
+  },
+
+  {
+    "id": 10,
+    "make": "Volkswagen",
+    "model": "Golf",
+    "year": 2018,
+    "image": "img/cars/car10.jpg",
+    "price_per_day": 80
+  },
+  {
+    "id": 11,
+    "make": "Subaru",
+    "model": "Impreza",
+    "year": 2021,
+    "image": "img/cars/car11.jpg",
+    "price_per_day": 85
+  },
+  {
+    "id": 12,
+    "make": "Mazda",
+    "model": "Mazda3",
+    "year": 2020,
+    "image": "img/cars/car12.jpg",
+    "price_per_day": 75
+  },
+  {
+    "id": 13,
+    "make": "Kia",
+    "model": "Optima",
+    "year": 2019,
+    "image": "img/cars/car13.jpg",
+    "price_per_day": 70
+  },
+  {
+    "id": 14,
+    "make": "Hyundai",
+    "model": "Sonata",
+    "year": 2018,
+    "image": "img/cars/car14.jpg",
+    "price_per_day": 65
+  },
+  {
+    "id": 15,
+    "make": "Dodge",
+    "model": "Charger",
+    "year": 2021,
+    "image": "img/cars/car15.jpg",
+    "price_per_day": 110
+  },
+  {
+    "id": 16,
+    "make": "Tesla",
+    "model": "Model 3",
+    "year": 2021,
+    "image": "img/cars/car1.jpg",
+    "price_per_day": 140
+  },
+  {
+    "id": 17,
+    "make": "Ford",
+    "model": "Focus",
+    "year": 2020,
+    "image": "img/cars/car2.jpg",
+    "price_per_day": 110
+  },
+  {
+    "id": 18,
+    "make": "Chevrolet",
+    "model": "Cruze",
+    "year": 2019,
+    "image": "img/cars/car3.jpg",
+    "price_per_day": 100
+  },
+  {
+    "id": 19,
+    "make": "BMW",
+    "model": "X5",
+    "year": 2020,
+    "image": "img/cars/car4.jpg",
+    "price_per_day": 170
+  },
+  {
+    "id": 20,
+    "make": "Audi",
+    "model": "Q5",
+    "year": 2021,
+    "image": "img/cars/car5.jpg",
+    "price_per_day": 140
+  },
+  {
+    "id": 21,
+    "make": "Mercedes-Benz",
+    "model": "E-Class",
+    "year": 2020,
+    "image": "img/cars/car6.jpg",
+    "price_per_day": 150
+  },
+  {
+    "id": 22,
+    "make": "Toyota",
+    "model": "Rav4",
+    "year": 2020,
+    "image": "img/cars/car7.jpg",
+    "price_per_day": 110
+  },
+  {
+    "id": 23,
+    "make": "Honda",
+    "model": "Accord",
+    "year": 2021,
+    "image": "img/cars/car8.jpg",
+    "price_per_day": 100
+  },
+
+  {
+    "id": 25,
+    "make": "Volkswagen",
+    "model": "Jetta",
+    "year": 2019,
+    "image": "img/cars/car10.jpg",
+    "price_per_day": 85
+  },
+  {
+    "id": 26,
+    "make": "Subaru",
+    "model": "Legacy",
+    "year": 2020,
+    "image": "img/cars/car11.jpg",
+    "price_per_day": 95
+  },
+  {
+    "id": 27,
+    "make": "Mazda",
+    "model": "CX-5",
+    "year": 2021,
+    "image": "img/cars/car12.jpg",
+    "price_per_day": 120
+  },
+  {
+    "id": 28,
+    "make": "Kia",
+    "model": "Seltos",
+    "year": 2021,
+    "image": "img/cars/car13.jpg",
+    "price_per_day": 85
+  },
+  {
+    "id": 29,
+    "make": "Hyundai",
+    "model": "Elantra",
+    "year": 2020,
+    "image": "img/cars/car14.jpg",
+    "price_per_day": 75
+  },
+  {
+    "id": 30,
+    "make": "Dodge",
+    "model": "Durango",
+    "year": 2021,
+    "image": "img/cars/car15.jpg",
+    "price_per_day": 130
+  },
+  {
+    "id": 31,
+    "make": "Tesla",
+    "model": "Roadster",
+    "year": 2022,
+    "image": "img/cars/car16.jpg",
+    "price_per_day": 200
+  },
+  {
+    "id": 32,
+    "make": "Ford",
+    "model": "Explorer",
+    "year": 2021,
+    "image": "img/cars/car17.jpg",
+    "price_per_day": 130
+  },
+  {
+    "id": 33,
+    "make": "Chevrolet",
+    "model": "Tahoe",
+    "year": 2022,
+    "image": "img/cars/car18.jpg",
+    "price_per_day": 140
+  },
+  {
+    "id": 34,
+    "make": "BMW",
+    "model": "X3",
+    "year": 2021,
+    "image": "img/cars/car19.jpg",
+    "price_per_day": 155
+  },
+  {
+    "id": 35,
+    "make": "Audi",
+    "model": "A6",
+    "year": 2021,
+    "image": "img/cars/car20.jpg",
+    "price_per_day": 145
+  },
+  {
+    "id": 36,
+    "make": "Mercedes-Benz",
+    "model": "GLC",
+    "year": 2021,
+    "image": "img/cars/car21.jpg",
+    "price_per_day": 160
+  },
+  {
+    "id": 37,
+    "make": "Toyota",
+    "model": "Highlander",
+    "year": 2022,
+    "image": "img/cars/car22.jpg",
+    "price_per_day": 125
+  },
+  {
+    "id": 38,
+    "make": "Honda",
+    "model": "Pilot",
+    "year": 2022,
+    "image": "img/cars/car8.jpg",
+    "price_per_day": 120
+  },
+  {
+    "id": 40,
+    "make": "Volkswagen",
+    "model": "Atlas",
+    "year": 2022,
+    "image": "img/cars/car10.jpg",
+    "price_per_day": 135
+  },
+  {
+    "id": 41,
+    "make": "Subaru",
+    "model": "Outback",
+    "year": 2022,
+    "image": "img/cars/car11.jpg",
+    "price_per_day": 115
+  },
+  {
+    "id": 42,
+    "make": "Mazda",
+    "model": "CX-9",
+    "year": 2021,
+    "image": "img/cars/car12.jpg",
+    "price_per_day": 125
+  },
+  {
+    "id": 43,
+    "make": "Kia",
+    "model": "Sportage",
+    "year": 2022,
+    "image": "img/cars/car13.jpg",
+    "price_per_day": 100
+  },
+  {
+    "id": 44,
+    "make": "Hyundai",
+    "model": "Kona",
+    "year": 2021,
+    "image": "img/cars/car14.jpg",
+    "price_per_day": 90
+  },
+  {
+    "id": 45,
+    "make": "Dodge",
+    "model": "Challenger",
+    "year": 2021,
+    "image": "img/cars/car15.jpg",
+    "price_per_day": 120
+  },
+
+  {
+    "id": 47,
+    "make": "Ford",
+    "model": "F-150",
+    "year": 2021,
+    "image": "img/cars/car17.jpg",
+    "price_per_day": 140
+  },
+  {
+    "id": 48,
+    "make": "Chevrolet",
+    "model": "Silverado",
+    "year": 2022,
+    "image": "img/cars/car18.jpg",
+    "price_per_day": 150
+  },
+
+  {
+    "id": 50,
+    "make": "Audi",
+    "model": "Q7",
+    "year": 2022,
+    "image": "img/cars/car20.jpg",
+    "price_per_day": 170
+  }
+]
