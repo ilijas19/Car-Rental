@@ -5,9 +5,7 @@ import ourCarsView from "./views/ourCarsView.js";
 import filterView from "./views/filterView.js";
 import popupView from "./views/popupView.js";
 import savedCarsView from "./views/savedCarsView.js";
-import View from "./views/View.js";
 
-//loading header and footer controller
 const headerFooterControl = async function () {
   await headerFooterView.loadHeader();
   await headerFooterView.loadFooter();
@@ -15,11 +13,14 @@ const headerFooterControl = async function () {
 
 const featuredCarsControl = async function () {
   try {
-    //loading all cars
+    // Load all cars and initialize saved cars
     await model.loadCars();
-    //rendering featured cars
+    model.initializeSavedCars(); // Initialize saved cars
+
+    // Render featured cars
     featuredCarsView.render(model.state.cars);
-    //ADDING BOOKMARK BTN FUNCTIONALITY
+
+    // Add bookmark button functionality
     savedCarsView.addBookmarkBtnHandler(model.saveCar);
   } catch (error) {
     console.error(error);
@@ -27,25 +28,32 @@ const featuredCarsControl = async function () {
 };
 
 const ourCarsControl = async function () {
-  // Load all cars into the state
-  await model.loadCars();
+  try {
+    // Load all cars and initialize saved cars
+    await model.loadCars();
+    model.initializeSavedCars(); // Initialize saved cars
 
-  // Set the initial cars to be displayed
-  model.loadNumberOfCars(model.state.cars);
-  ourCarsView.render(model.state.carsToBeDisplayed);
-
-  // Set events to the page buttons and filtering
-  ourCarsView.setBtnEvents(function (query) {
-    model.changePage(query);
-    // Render cars after changing the page
+    // Set the initial cars to be displayed
+    model.loadNumberOfCars(model.state.cars);
     ourCarsView.render(model.state.carsToBeDisplayed);
-  });
-  //adding event listener for rent now btn
-  /////
-  popupControl();
 
-  //ADDING BOOKMARK BTN FUNCTIONALITY
-  savedCarsView.addBookmarkBtnHandler(model.saveCar);
+    // Set events for page buttons and filtering
+    ourCarsView.setBtnEvents(function (query) {
+      model.changePage(query);
+      // Render cars after changing the page
+      ourCarsView.render(model.state.carsToBeDisplayed);
+      // Add bookmark button functionality
+      savedCarsView.addBookmarkBtnHandler(model.saveCar);
+    });
+
+    // Add event listener for "rent now" button
+    popupControl();
+
+    // Add bookmark button functionality
+    savedCarsView.addBookmarkBtnHandler(model.saveCar);
+  } catch (error) {
+    console.error(error);
+  }
 };
 
 const filterCarsControl = function () {
@@ -54,11 +62,10 @@ const filterCarsControl = function () {
     // Render filtered cars
     filterView.render(model.state.filteredCars);
 
-    //adding event listener for rent now btn
-    /////
+    // Add event listener for "rent now" button
     popupControl();
 
-    //ADDING BOOKMARK BTN FUNCTIONALITY
+    // Add bookmark button functionality
     savedCarsView.addBookmarkBtnHandler(model.saveCar);
   });
 };
@@ -67,25 +74,40 @@ const popupControl = function () {
   popupView.initializePopupContainer(); // Ensure the container is found
   popupView.addButtonEvents(function (id) {
     model.findCar(id);
-
-    // console.log(model.state.currentCar);
     popupView.togglePopup(model.state.currentCar);
   });
 };
 
 const savedCarsControl = function () {
+  console.log("rendering saved cars");
+  model.initializeSavedCars();
   savedCarsView.render(model.state.savedCars);
+
+  savedCarsView.removeSavedCarHandler(function (id) {
+    model.removeSavedCar(id);
+    savedCarsView.render(model.state.savedCars);
+  });
 };
 
 const init = async function () {
   try {
+    // Initialize header and footer
     headerFooterView.addHandlerHeaderFooter(headerFooterControl);
+
+    // Initialize featured cars view
     featuredCarsView.addHandlerFeaturedCars(featuredCarsControl);
+
+    // Initialize our cars view
     ourCarsView.addHandlerOurCars(ourCarsControl);
+
+    // Initialize filter view
     filterView.addFilterHandler(filterCarsControl);
-    savedCarsView.addSavedCarsPageHandler();
+
+    // Initialize saved cars view
+    savedCarsView.addSavedCarsPageHandler(savedCarsControl);
   } catch (error) {
     console.error(error);
   }
 };
+
 init();

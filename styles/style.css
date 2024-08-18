@@ -443,6 +443,7 @@ main {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 4rem;
+  min-height: 30rem;
 }
 .our-car {
   border-radius: 12px;

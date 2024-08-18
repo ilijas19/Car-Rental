@@ -14,9 +14,10 @@ export default class View {
     <div class="our-car">
         <div class="our-car-text-div">
           <p class="our-car-name">${car.make} ${car.model}</p>
+          
           <ion-icon
             class="info-icon"
-            name="bookmark-outline"
+            name="${car.saved ? "bookmark" : "bookmark-outline"}"
             data-id="${car.id}"
             ></ion-icon>
         </div>

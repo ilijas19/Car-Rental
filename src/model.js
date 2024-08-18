@@ -17,6 +17,15 @@ export const loadCars = async function () {
 
     const data = await response.json();
     state.cars = data;
+
+    // Retrieve saved cars from local storage
+    const savedCars = JSON.parse(localStorage.getItem("savedCars")) || [];
+
+    // Update state.cars with the saved status from local storage
+    state.cars.forEach((car) => {
+      const savedCar = savedCars.find((saved) => saved.id === car.id);
+      car.saved = savedCar ? savedCar.saved : false;
+    });
   } catch (error) {
     console.error(error);
   }
@@ -57,23 +66,51 @@ export const findCar = function (id) {
   // console.log(state.currentCar);
 };
 
+// Save or remove a car from savedCars and local storage
 export const saveCar = function (id, query) {
+  const car = state.cars.find((car) => car.id === id);
+  if (!car) return; // Car not found
+
   if (query === "ADD") {
-    const car = state.cars.find((car) => car.id === id);
-    state.savedCars.push(car);
+    // Add car to savedCars if not already present
+    if (!state.savedCars.find((saved) => saved.id === id)) {
+      state.savedCars.push({ ...car, saved: true });
+      car.saved = true;
+    }
   } else if (query === "REMOVE") {
-    state.savedCars = state.savedCars.filter((car) => car.id !== id);
+    // Remove car from savedCars
+    state.savedCars = state.savedCars.filter((savedCar) => savedCar.id !== id);
+    car.saved = false;
   }
 
-  // Update local storage
+  // Update local storage with the current state of savedCars
   localStorage.setItem("savedCars", JSON.stringify(state.savedCars));
-
-  // For debugging, log the updated list
-  console.log(state.savedCars, "current saved cars");
 };
 
-// Function to initialize saved cars from local storage
 export const initializeSavedCars = function () {
   const savedCars = JSON.parse(localStorage.getItem("savedCars")) || [];
   state.savedCars = savedCars;
+
+  // Update state.cars with the saved status from local storage
+  state.cars.forEach((car) => {
+    const savedCar = savedCars.find((saved) => saved.id === car.id);
+    car.saved = savedCar ? savedCar.saved : false;
+  });
+};
+
+export const removeSavedCar = function (id) {
+  console.log("removing", id);
+  // Find the car to remove
+  const car = state.savedCars.find((car) => car.id === id);
+  console.log(car);
+  if (!car) return; // Car not found
+
+  // Remove car from savedCars array
+  state.savedCars = state.savedCars.filter((savedCar) => savedCar.id !== id);
+
+  // Update the car's saved status to false
+  car.saved = false;
+
+  // Update local storage
+  localStorage.setItem("savedCars", JSON.stringify(state.savedCars));
 };
