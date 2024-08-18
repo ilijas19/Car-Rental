@@ -12,10 +12,9 @@ class FeaturedCarsView extends View {
   }
 
   addHandlerFeaturedCars(handler) {
-    if (
-      window.location.href.includes("index.html") ||
-      window.location.href.includes("index")
-    ) {
+    // Check if the URL path is the root or includes 'index'
+    const path = window.location.pathname;
+    if (path === "/" || path.includes("index")) {
       handler();
     }
   }

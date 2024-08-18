@@ -22,7 +22,8 @@ class OurCarsView extends View {
   addHandlerOurCars(handler) {
     if (
       window.location.href.includes("ourCars.html") ||
-      window.location.href.includes("ourCars")
+      window.location.href.includes("ourCars") ||
+      window.location.href.includes("ourcars")
     ) {
       handler();
     }
