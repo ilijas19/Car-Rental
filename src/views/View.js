@@ -16,7 +16,8 @@ export default class View {
           <p class="our-car-name">${car.make} ${car.model}</p>
           <ion-icon
             class="info-icon"
-            name="information-circle-outline"
+            name="bookmark-outline"
+            data-id="${car.id}"
             ></ion-icon>
         </div>
         <img class="our-car-img" src="${car.image}" alt="our-car" />
@@ -29,6 +30,7 @@ export default class View {
       </div>
     `;
   }
+
   _clear() {
     this._parentEl.innerHTML = "";
   }

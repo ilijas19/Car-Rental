@@ -7,6 +7,7 @@ export const state = {
   currentCarPage: defaultCarPage, //1
   resultsPerPage: resultsPerPage, //6
   filteredCars: [],
+  savedCars: [],
 };
 
 export const loadCars = async function () {
@@ -54,4 +55,25 @@ export const findCar = function (id) {
   const car = state.cars.find((car) => car.id === id);
   state.currentCar = car;
   // console.log(state.currentCar);
+};
+
+export const saveCar = function (id, query) {
+  if (query === "ADD") {
+    const car = state.cars.find((car) => car.id === id);
+    state.savedCars.push(car);
+  } else if (query === "REMOVE") {
+    state.savedCars = state.savedCars.filter((car) => car.id !== id);
+  }
+
+  // Update local storage
+  localStorage.setItem("savedCars", JSON.stringify(state.savedCars));
+
+  // For debugging, log the updated list
+  console.log(state.savedCars, "current saved cars");
+};
+
+// Function to initialize saved cars from local storage
+export const initializeSavedCars = function () {
+  const savedCars = JSON.parse(localStorage.getItem("savedCars")) || [];
+  state.savedCars = savedCars;
 };

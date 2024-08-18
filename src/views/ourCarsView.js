@@ -20,7 +20,12 @@ class OurCarsView extends View {
   }
 
   addHandlerOurCars(handler) {
-    window.addEventListener("DOMContentLoaded", handler);
+    if (
+      window.location.href.includes("ourCars.html") ||
+      window.location.href.includes("ourCars")
+    ) {
+      handler();
+    }
   }
 }
 export default new OurCarsView();

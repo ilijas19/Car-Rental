@@ -12,7 +12,12 @@ class FeaturedCarsView extends View {
   }
 
   addHandlerFeaturedCars(handler) {
-    window.addEventListener("DOMContentLoaded", handler);
+    if (
+      window.location.href.includes("index.html") ||
+      window.location.href.includes("index")
+    ) {
+      handler();
+    }
   }
 }
 export default new FeaturedCarsView();

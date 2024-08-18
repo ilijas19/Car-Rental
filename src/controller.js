@@ -4,6 +4,7 @@ import featuredCarsView from "./views/featuredCarsView.js";
 import ourCarsView from "./views/ourCarsView.js";
 import filterView from "./views/filterView.js";
 import popupView from "./views/popupView.js";
+import savedCarsView from "./views/savedCarsView.js";
 import View from "./views/View.js";
 
 //loading header and footer controller
@@ -18,6 +19,8 @@ const featuredCarsControl = async function () {
     await model.loadCars();
     //rendering featured cars
     featuredCarsView.render(model.state.cars);
+    //ADDING BOOKMARK BTN FUNCTIONALITY
+    savedCarsView.addBookmarkBtnHandler(model.saveCar);
   } catch (error) {
     console.error(error);
   }
@@ -40,6 +43,9 @@ const ourCarsControl = async function () {
   //adding event listener for rent now btn
   /////
   popupControl();
+
+  //ADDING BOOKMARK BTN FUNCTIONALITY
+  savedCarsView.addBookmarkBtnHandler(model.saveCar);
 };
 
 const filterCarsControl = function () {
@@ -51,6 +57,9 @@ const filterCarsControl = function () {
     //adding event listener for rent now btn
     /////
     popupControl();
+
+    //ADDING BOOKMARK BTN FUNCTIONALITY
+    savedCarsView.addBookmarkBtnHandler(model.saveCar);
   });
 };
 
@@ -64,12 +73,17 @@ const popupControl = function () {
   });
 };
 
+const savedCarsControl = function () {
+  savedCarsView.render(model.state.savedCars);
+};
+
 const init = async function () {
   try {
     headerFooterView.addHandlerHeaderFooter(headerFooterControl);
     featuredCarsView.addHandlerFeaturedCars(featuredCarsControl);
     ourCarsView.addHandlerOurCars(ourCarsControl);
     filterView.addFilterHandler(filterCarsControl);
+    savedCarsView.addSavedCarsPageHandler();
   } catch (error) {
     console.error(error);
   }
