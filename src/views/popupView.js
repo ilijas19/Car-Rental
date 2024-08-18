@@ -22,6 +22,7 @@ class PopupView {
   }
 
   togglePopup(car) {
+    this.initializePopupContainer();
     const markup = this._generatePopupMarkup(car);
     this._popupContainerEl.innerHTML = ""; // Clear any existing content
     this._popupContainerEl.insertAdjacentHTML("beforeend", markup);

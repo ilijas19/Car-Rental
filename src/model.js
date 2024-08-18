@@ -66,6 +66,11 @@ export const findCar = function (id) {
   // console.log(state.currentCar);
 };
 
+export const findSaved = function (id) {
+  const car = state.savedCars.find((car) => car.id === id);
+  state.currentCar = car;
+  // console.log(state.currentCar);
+};
 // Save or remove a car from savedCars and local storage
 export const saveCar = function (id, query) {
   const car = state.cars.find((car) => car.id === id);

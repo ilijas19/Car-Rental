@@ -22,6 +22,8 @@ const featuredCarsControl = async function () {
 
     // Add bookmark button functionality
     savedCarsView.addBookmarkBtnHandler(model.saveCar);
+    // Add event listener for "rent now" button
+    popupControl();
   } catch (error) {
     console.error(error);
   }
@@ -44,10 +46,11 @@ const ourCarsControl = async function () {
       ourCarsView.render(model.state.carsToBeDisplayed);
       // Add bookmark button functionality
       savedCarsView.addBookmarkBtnHandler(model.saveCar);
+      popupControl();
     });
+    popupControl();
 
     // Add event listener for "rent now" button
-    popupControl();
 
     // Add bookmark button functionality
     savedCarsView.addBookmarkBtnHandler(model.saveCar);
@@ -74,15 +77,22 @@ const popupControl = function () {
   popupView.initializePopupContainer(); // Ensure the container is found
   popupView.addButtonEvents(function (id) {
     model.findCar(id);
+
+    popupView.togglePopup(model.state.currentCar);
+  });
+};
+const popupSavedCarControl = function () {
+  popupView.initializePopupContainer(); // Ensure the container is found
+  popupView.addButtonEvents(function (id) {
+    model.findSaved(id);
     popupView.togglePopup(model.state.currentCar);
   });
 };
 
 const savedCarsControl = function () {
-  console.log("rendering saved cars");
   model.initializeSavedCars();
   savedCarsView.render(model.state.savedCars);
-
+  popupView.addPopupHandler(popupSavedCarControl);
   savedCarsView.removeSavedCarHandler(function (id) {
     model.removeSavedCar(id);
     savedCarsView.render(model.state.savedCars);
